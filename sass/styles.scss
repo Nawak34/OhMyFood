@@ -1,0 +1,571 @@
+// Scss Document
+
+//Les variables
+$violet:#9356DC;
+$rose:#FF79DA;
+$vert:#99E2D0;
+$gris:#f6f6f6;
+$grisFonce:#f3f3f3;
+$boutton-gradient: linear-gradient(180deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+$roboto:'Roboto', sans-serif;
+$shrinkhand: "Shrikhand", "cursive";
+   
+
+@mixin flex-centre{
+	display:flex;
+	justify-content: center;
+	align-items:center;	
+}
+@mixin boutton-style{
+	opacity:1;
+	background: $boutton-gradient;
+	color:white;
+	padding:0 20px;
+	box-shadow:0px 0px 10px 0px;
+	border-radius: 100px;
+	margin:60px auto;
+	
+}
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+	font-family: $roboto;
+	background:$gris;
+    overflow-x: hidden; 
+}
+
+.main{
+	margin:0;
+	@include flex-centre;
+	flex-direction: column;
+}
+
+
+
+header {
+  box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+	.logo {
+	  font-family: "Shrikhand", cursive;
+	  margin: 0;
+	  color: black;}
+	a{
+	  text-decoration: none;
+	  color: white;
+	}
+}
+
+/*Spinner*/
+
+.hexagon-loader{
+	
+	/*Animation du Loader*/
+	-webkit-animation: scale-in-tr 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-tr 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: scale-out-center 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: scale-out-center 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	/*Positionnement Loader*/
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 190px;
+	bottom: 0;
+	z-index: 9999;
+	
+}
+.hexagon-spinner{
+	position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.4);
+    z-index:9999;
+	/*Animation du Loader*/
+	
+	-webkit-animation: scale-out-center 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: scale-out-center 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+/*Localisation Paris*/
+
+.localisation{
+		display: flex;
+		justify-content: center;
+		background-color: $grisFonce;
+		align-items: center;
+		margin: 20px 20px;
+		position: relative;	
+	.local::before{
+		font-family: "Font awesome 5 free";
+		font-weight:600;
+		content:"\f3c5";
+		display:inline-block;
+		font-style: normal;
+		font-variant:normal;
+		text-rendering: auto;	}	
+	.paris {
+		margin-left:14px; 
+		font-weight: 400;}
+}
+
+
+/*Bloc Réservation*/
+
+
+.reservation {
+  background: #fafafa;
+  width: 100%;
+	
+	.reservation-bloc {
+	  width: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;	 
+	  flex-direction: column; }
+	.reservation-titre{
+		  text-align: center;
+		  max-width: 250px;
+		  margin: 0;}
+	.reservation-paragraphe {
+  		  text-align: center;}
+	.reservation-bouton {
+		  opacity: 1;
+		  background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
+		  color: white;
+		  padding: 0 20px;
+		  border-radius: 200px;
+		  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+		  animation-duration: 1s;
+		  animation-fill-mode: both;
+		  animation-timing-function: ease-in-out;
+		  animation-iteration-count: infinite;
+  }
+	.reservation-bouton:hover {
+		  opacity: 0.8;
+		  cursor: pointer;
+		  transition: 0.3s;
+		  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+    	animation-name: bounce;
+	   }
+}
+
+/*Bloc Fonctionnement*/
+
+.fonctionnement {
+    padding: 25px 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	.contenu-fonctionnement{
+		  width: 95%;
+		  max-width: 1200px;
+		  background-color: white;
+		  padding: 0;
+		  display: flex;
+		  flex-direction: column;
+				.titre { margin: 0;}
+	   .blocs-foctionnement {
+			   	display: flex;
+				justify-content: center;
+				flex-direction: row;
+				 
+		   .fonctionnement-bloc {
+				  display: flex;
+				  align-items: center;
+				  background: #f6f6f6;
+				  height: auto;
+				  width: 100%;
+				  margin: 10px 20px;
+				  border-radius: 20px;
+				  position: relative;
+				  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+				  -webkit-animation: scale-in-hor-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+				  animation: scale-in-hor-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+			 	   .alinea {
+						  background-color: #9356DC;
+						  color: white;
+						  position: absolute;
+						  padding: 3px 8px 3px 8px;
+						  border-radius: 500px;
+						  transform: translateX(-50%);}
+				   .icones {
+							  color: #7E7E7E;
+							  margin: 0 20px;}
+			   		.intitule {text-align: center; }
+	
+}
+}
+}
+}
+/*Bloc des photos*/
+
+.restaurants{
+			width: 100%;
+			max-width: 1200px;
+			.titre-restaurants{
+			margin: 0px;}	
+			.blocs-restaurants{
+				display: grid;
+		         grid-template-columns: repeat(2, 1fr);
+				.liens-carte{
+					text-decoration: none;
+					color:inherit;
+					margin:10px;
+					}
+					.bouton-menu{
+					height : 32px;
+					width :  32px;
+					margin-right: 5px;
+					background-color : transparent;
+					border : transparent solid 0;
+					padding : 0;
+					display : flex;
+					align-items : center;
+					justify-content : center;
+					cursor : pointer;
+					position : relative;
+					background-color : #000;}
+					.bouton-menu:hover:before {
+					opacity : 1;
+					}
+					.bouton-menu:before {
+					opacity : 0;
+					transition : 0.5s;
+					content : "";
+					background : linear-gradient(0deg, #9356dc, #ff79da);
+					}
+					.bouton-menu:before, .coeur-avis {
+					position : absolute;
+					top : 0;
+					left : 0;
+					height : 100%;
+					width : 100%;
+					}
+					.coeur-avis {
+					transition-duration : 0.25s;
+					background-color : #f6f6f6;
+					display : flex;
+					align-items : center;
+					justify-content : center;
+					mix-blend-mode : lighten;
+					}
+					.bouton-menu:hover .coeur-avis-vide {
+					opacity : 0;
+					}
+
+				.carte-restaurant {
+						width: 100%;
+						background: #FFF;
+						border-radius: 10px;
+						box-shadow: 2px 4px 8px 3px #dadade;
+						margin-bottom: 20px;
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						position: relative;
+					img{
+						height: 190px;
+						width: 100%;
+						border: 0 solid transparent;
+						border-radius: 10px 10px 0 0;
+						box-shadow: none;
+						object-fit: cover;
+							}
+					.badge-card{
+							background-color: #99e2d0;
+							color: #1b6150;
+							padding: 12px;
+							border-radius: 2px;
+							position: absolute;
+							top: 16px;
+							right: 12px;
+								}
+						
+								.foot-carte{
+									  background: white;
+									  display: flex;
+									  justify-content: space-between;
+									  align-items: center;
+									  width: 100%;
+									  height: 90px;
+									  border-radius: 0 0 20px 20px; 
+
+									h4{
+										padding-left: 12px;
+										 margin: 2px 0 0 0;}
+									p{font-size: 16px;
+										padding-left: 12px;
+										margin: 6px 0;}
+									.heart{
+										padding-right: 10px;
+									}
+									}
+									
+}
+}
+}
+/*Animations Animations */
+
+.fonctionnement-bloc:hover{
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 3);
+	background-color: #E5D8F5 !important;
+	i{
+		color:$violet;
+	}
+}
+
+/*Pied de page */
+footer {
+		  width: 100%;
+		  background-color: #353535;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+			a{text-decoration:none;
+			color:white;}
+				.blocs {
+				  display: inline;
+				  padding: 10px 40px;
+				  width: 100%;
+				  max-width: 1200px;
+					.logo{
+						font-family: 'Shrikhand', cursive;
+						color: white;	
+						font-size: 20px;
+						padding: 15px 0; }
+				
+					.bloc-liens{
+						display:flex;
+						flex-direction: row;
+						width: auto;
+						text-align: center;
+						justify-content: space-between;
+							.bloc-lien{
+								display: inline-flex;
+								align-items: center;
+								color: white;
+								height: 60px;
+								cursor: pointer;}	
+									i {margin-right: 7px;}
+										.titre {font-size: 16px;
+												font-weight: 400;}
+			}								
+	}									
+}
+
+//Les animations //
+				
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-7-28 8:11:36
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-hor-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+
+//spinner //
+/* ----------------------------------------------
+ * Generated by Animista on 2021-7-28 7:34:5
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-tr
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-tr {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-tr {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-7-28 7:43:59
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-out-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+	
+	.blocs-foctionnement{
+		  display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+	}
+.restaurants{
+	.blocs-restaurants{
+  	display: grid;
+    grid-template-columns: repeat(1, 1fr);
+		.carte-restaurant{
+			width: 98%;
+		}
+	}
+	}
+footer {
+		  width: 100%;
+		  background-color: #353535;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+			a{text-decoration:none;
+			color:white;}
+				.blocs {
+				  display: inline;
+				  padding: 10px 40px;
+				  width: 100%;
+				  
+					.logo{
+						font-family: 'Shrikhand', cursive;
+						color: white;	
+						font-size: 20px;
+						padding: 15px 0; }
+				
+					.bloc-liens{
+						display:flex;
+						flex-direction: column;
+						width: auto;
+						text-align: center;
+						justify-content: space-between;
+							.bloc-lien{
+								display: inline-flex;
+								align-items: center;
+								color: white;
+								height: 60px;
+								cursor: pointer;}	
+									i {margin-right: 7px;}
+										.titre {font-size: 16px;
+												font-weight: 400;}
+			}								
+	}									
+}
+	
+}
