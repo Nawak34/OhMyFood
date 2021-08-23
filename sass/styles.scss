@@ -10,7 +10,7 @@ $boutton-gradient: linear-gradient(180deg, rgba(255,121,218,1) 0%, rgba(147,86,2
 $roboto:'Roboto', sans-serif;
 $shrinkhand: "Shrikhand", "cursive";
    
-
+//Les macros ou mixin un esemmble d'instructions
 @mixin flex-centre{
 	display:flex;
 	justify-content: center;
