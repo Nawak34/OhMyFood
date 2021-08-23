@@ -195,9 +195,7 @@ html, body {
           box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
 }
 #menu .les-menus .blocs-menus {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
 }
 #menu .les-menus .blocs-menus .menu-composant {
@@ -585,9 +583,7 @@ footer .blocs .bloc-liens .titre {
 }
 @media screen and (max-width: 900px) {
   .blocs-menus {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[1] !important;
     grid-template-columns: repeat(1, 1fr) !important;
   }
 
